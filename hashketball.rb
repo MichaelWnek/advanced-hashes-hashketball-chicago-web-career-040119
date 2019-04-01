@@ -157,7 +157,7 @@ def players
 end
 
 def find_the_team(team_name)
-  teams.find {|team| team.fetch(:team_name) == team_name}
+  teams.find { |team| team.fetch(:team_name) == team_name }
 end
 
 def find_the_player(name)
@@ -165,13 +165,15 @@ def find_the_player(name)
 end
 
 def player_biggest_shoe_size
-  players.max_by{|player, stats| stats.fetch(:shoe)}[1]
+  players.max_by{ |player, stats| stats.fetch(:shoe) }[1]
+end
+
+def player_by_number(number)
+   players.find { |player| player[:number] == number }   
+   # player_numbers(team_name).fetch(:players)
 end
 
 
-
-
-
-
+puts player_by_number(0)
 
 
